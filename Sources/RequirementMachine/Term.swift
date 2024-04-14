@@ -37,7 +37,7 @@ struct Term {
     case .concrete(let n):
       self = Term([.concrete(n)])
     case .trait(let n):
-      self = Term([.concrete(n)])
+      self = Term([.trait(n)])
     case .associatedType(let q, let t, let n):
       self = Term(q) + Term([.associatedType(trait: t, name: n)])
     case .genericType(let n):
