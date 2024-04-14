@@ -36,30 +36,30 @@ func main() {
         qualification: this, trait: "Collection", name: "Slice"),
       rhs: .trait("Collection")),
 
-    // Self: Self.Slice.Index == Self.Index
+    // Self.Slice.Index == Self.Index
     .equality(
       lhs: .associatedType(
         qualification: .associatedType(
           qualification: this, trait: "Collection", name: "Slice"),
-        trait: "Slice", name: "Index"),
+        trait: "Collection", name: "Index"),
       rhs: .associatedType(
         qualification: this, trait: "Collection", name: "Index")),
 
-    // Self: Self.Slice.Element == Self.Element
+    // Self.Slice.Element == Self.Element
     .equality(
       lhs: .associatedType(
         qualification: .associatedType(
           qualification: this, trait: "Collection", name: "Slice"),
-        trait: "Slice", name: "Index"),
+        trait: "Collection", name: "Element"),
       rhs: .associatedType(
-        qualification: this, trait: "Collection", name: "Index")),
+        qualification: this, trait: "Collection", name: "Element")),
 
-    // Self: Self.Slice.Slice == Self.Slice
+    // Self.Slice.Slice == Self.Slice
     .equality(
       lhs: .associatedType(
         qualification: .associatedType(
           qualification: this, trait: "Collection", name: "Slice"),
-        trait: "Slice", name: "Index"),
+        trait: "Collection", name: "Slice"),
       rhs: .associatedType(
         qualification: this, trait: "Collection", name: "Slice")),
   ]
